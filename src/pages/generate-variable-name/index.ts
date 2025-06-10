@@ -1,0 +1,1 @@
+export * from "./generate-variable-name.page";

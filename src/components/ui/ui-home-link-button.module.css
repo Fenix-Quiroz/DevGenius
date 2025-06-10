@@ -1,0 +1,17 @@
+.previousPageButton{
+    color: var(--text-secundary);
+    display: inline-block;
+    padding: 10px 40px;
+    border-radius: var(--border-radius);  
+    margin-top: 16px;
+   margin-left: 16px;
+    text-decoration: none;
+    border: 1px solid var(--border-card);
+    transition: all ease 0.3s
+
+  }
+  
+  .previousPageButton:hover{
+    border: 1px solid var(--border-card-hover);
+   
+  }

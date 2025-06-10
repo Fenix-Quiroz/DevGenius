@@ -1,0 +1,21 @@
+.container {
+  padding: var(--padding);
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.item {
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+}
+.color-harmonies {
+  grid-column: 1 / -1;
+}
+@media screen and (width < 800px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+}

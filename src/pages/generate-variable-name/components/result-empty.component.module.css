@@ -1,0 +1,14 @@
+.results-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+  }
+  .results-empty span {
+    color: var(--border-card);
+  }
+  .results-empty p {
+    color: var(--text-secundary);
+    max-width: 600px;
+    margin: auto;
+  }

@@ -1,0 +1,44 @@
+header {
+  padding: var(--padding);
+  border-bottom: 1px solid var(--border);
+}
+header h1 {
+  font-size: 1.7em;
+}
+header p {
+  color: var(--text-secundary);
+  margin-top: 10px;
+}
+.form {
+  padding: var(--padding);
+}
+.input-container {
+  position: relative;
+}
+
+.form input {
+  color: var(--text-secundary);
+  margin-top: 10px;
+}
+
+.div-color {
+  position: absolute;
+  right: 10px;
+  top: 60%;
+  width: 20px;
+  height: 20px;
+  border-radius: 80px;
+  pointer-events: none;
+}
+.form label {
+  color: var(--text-secundary);
+}
+.form button {
+  margin-top: 25px;
+  min-width: 100%;
+}
+.error {
+  color: var(--error-color);
+  margin: 0.5rem 0;
+  margin-left: 1rem;
+}

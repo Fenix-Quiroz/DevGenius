@@ -1,0 +1,14 @@
+.container {
+  margin: 20px;
+  border: 2px solid var(--border);
+  border-radius: var(--border-radius);
+}
+
+
+@media screen and (width > 700px) {
+  .container-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,15 @@
+.header {
+  padding: var(--padding);
+ 
+  border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+  font-size: 2em;
+}
+
+.header p {
+  margin-top: 5px;
+  font-size: 1em;
+  color: var(--text-secundary);
+}

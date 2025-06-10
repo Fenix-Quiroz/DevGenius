@@ -1,0 +1,29 @@
+.form-container {
+  border-right: 1px solid var(--border);
+}
+.form-container h2 {
+  text-align: start;
+  font-size: 1.3em;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  padding: var(--padding);
+
+}
+.form{
+  padding: var(--padding);
+}
+.form-item {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.button {
+  width: 100%;
+}
+
+.error {
+  color: var(--error-color);
+  margin: 0.5rem 0;
+  margin-left: 1rem;
+}

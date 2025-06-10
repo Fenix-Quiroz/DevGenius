@@ -1,0 +1,25 @@
+.header {
+  padding: var(--padding);
+  margin: 0 15px ;
+  border-bottom: 2px solid var(--text-secundary);
+
+}
+.header p {
+  font-size: 1.2em;
+  color: var(--text-secundary);
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-size: 3em;
+  margin-top: 15px;
+  
+}
+.logo-container h1 {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+a{
+  display: flex;
+  align-items: center;
+}

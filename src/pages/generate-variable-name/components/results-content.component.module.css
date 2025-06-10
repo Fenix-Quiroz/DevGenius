@@ -1,0 +1,30 @@
+.results-content {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: var(--padding);
+  }
+
+  .results-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+  }
+  .results-content li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    align-items: center;
+    font-size: 1.2em;
+    border: 1px solid var(--border-card-hover);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+  }
+
+
+  .results-content li::selection{
+    background-color: var(--color-primary);
+  }

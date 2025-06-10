@@ -1,0 +1,14 @@
+.results {
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.results h3 {
+  text-align: start;
+  font-size: 1.3em;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  padding: var(--padding);
+}
+
+
+

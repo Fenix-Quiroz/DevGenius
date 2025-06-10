@@ -1,0 +1,27 @@
+.container {
+  padding: 20px;
+  margin: 5px;
+}
+.container h2 {
+  font-size: 1.7em;
+}
+.color-harmonies {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+.color-harmonies li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.color-harmonies li p {
+  border-radius: 9999px;
+  width: 70px;
+  height: 70px;
+}

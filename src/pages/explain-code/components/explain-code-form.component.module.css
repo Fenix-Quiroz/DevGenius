@@ -1,0 +1,17 @@
+.form-container {
+  border: 1px solid var(--border);
+  padding: var(--padding) 0;
+  border-radius: var(--border-radius);
+}
+
+.form {
+  padding: var(--padding);
+}
+.button {
+  width: 100%;
+  margin-top: 10px;
+}
+.error {
+  color: var(--error-color);
+  margin: 0.5rem 0;
+}
