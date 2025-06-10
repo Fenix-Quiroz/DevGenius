@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { ColorDataArray } from "./api.model";
 //import { ColorDataArray } from "../color-converter.model";
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_CLIENT_ID });
 export const fetchData = async (color: string): Promise<ColorDataArray> => {
   try {
     const response = await ai.models.generateContent({
@@ -33,8 +33,7 @@ export const fetchData = async (color: string): Promise<ColorDataArray> => {
 `,
     });
 
-    // ✅ Aquí obtenemos el texto correctamente
-    const text = response.candidates?.[0]?.content?.parts?.[0]?.text;
+    const text = response.text;
     if (text) {
       const cleaned = text
         .trim()

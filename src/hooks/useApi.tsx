@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { useState } from "react";
 
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_CLIENT_ID });
 
 export const useApi = () => {
   const [results, setResults] = useState("");
