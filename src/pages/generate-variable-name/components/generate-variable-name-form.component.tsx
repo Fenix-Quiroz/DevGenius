@@ -97,7 +97,7 @@ export const GenerateVariableNameForm = (props: Props) => {
           className={`${classes.button} ${"button-styles-general"}`}
         >
           {" "}
-          {loading ? "Esperando respuesta..." : "🪄 Generar Nombres"}
+          {loading ? "Esperando respuesta..." : "✨ Generar Nombres"}
         </button>
       </form>
     </div>

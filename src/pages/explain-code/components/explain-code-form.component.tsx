@@ -67,7 +67,7 @@ export const ExplainCodeForm = (props: Props) => {
           disabled={loading}
           className={`${classes.button} ${"button-styles-general"}`}
         >
-          {loading ? "Esperando respuesta..." : "🪄 Explicar"}
+          {loading ? "Esperando respuesta..." : "✨ Explicar"}
         </button>
       </form>
     </section>

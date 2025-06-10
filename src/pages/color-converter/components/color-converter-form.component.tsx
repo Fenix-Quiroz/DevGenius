@@ -67,7 +67,7 @@ export const ColorConverterForm = (props: props) => {
           disabled={loading}
           type="submit"
         >
-          {loading ? "Esperando respuesta..." : "Convertir"}
+          {loading ? "Esperando respuesta..." : "✨Convertir"}
         </button>
       </form>
     </section>
