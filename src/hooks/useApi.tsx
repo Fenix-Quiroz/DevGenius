@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 export const useApi = () => {
   const [results, setResults] = useState("");
   const [loading, setLoading] = useState(false);
@@ -7,7 +6,7 @@ export const useApi = () => {
   const fetchData = async (prompt: string) => {
     setLoading(true);
     try {
-      const res = await fetch("/.netlify/functions/gemini", {
+      const res = await fetch("/api/gemini", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
