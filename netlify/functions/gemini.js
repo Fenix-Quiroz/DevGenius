@@ -2,40 +2,49 @@ import { GoogleGenAI } from "@google/genai";
 
 export default async (req) => {
   try {
-    const { prompt } = JSON.parse(req.body || "{}");
-
-    if (!prompt) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: "Prompt is required" }),
-      };
+    if (req.method !== "POST") {
+      return new Response(JSON.stringify({ error: "Method Not Allowed" }), {
+        status: 405,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
-    const ai = new GoogleGenAI({
-      apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
-    });
+    const { prompt } = await req.json();
+
+    if (!prompt || typeof prompt !== "string") {
+      return new Response(JSON.stringify({ error: "Prompt is required" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+    if (!apiKey) {
+      return new Response(
+        JSON.stringify({ error: "Missing GOOGLE_GENERATIVE_AI_API_KEY" }),
+        {
+          status: 500,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+
+    const ai = new GoogleGenAI({ apiKey });
 
     const result = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: prompt,
     });
 
-    // Dependiendo de la versión del SDK puede variar,
-    // así que tomamos lo más común:
-    const text =
-      result?.text ||
-      result?.candidates?.[0]?.content?.parts?.map((p) => p.text).join("") ||
-      "";
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ text }),
-    };
+    return new Response(JSON.stringify({ text: result?.text || "" }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (err) {
-    console.error("Gemini function error:", err);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: "Internal error" }),
-    };
+    console.error("gemini error:", err);
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 };
