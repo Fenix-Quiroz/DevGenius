@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { ColorDataArray } from "./api.model";
 //import { ColorDataArray } from "../color-converter.model";
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_CLIENT_ID });
+const ai = new GoogleGenAI({ apiKey:  process.env.GOOGLE_GENERATIVE_AI_API_KEY});
 export const fetchData = async (color: string): Promise<ColorDataArray> => {
   try {
     const response = await ai.models.generateContent({
