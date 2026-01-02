@@ -1,7 +1,7 @@
 import { ColorDataArray } from "./api.model";
 export const fetchData = async (color: string): Promise<ColorDataArray> => {
   try {
-    const res = await fetch("../../../../netlify/functions/color-converter", {
+    const res = await fetch("/.netlify/functions/color-converter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ color }),
