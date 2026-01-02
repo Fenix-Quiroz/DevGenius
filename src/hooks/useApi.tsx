@@ -1,7 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
 import { useState } from "react";
-
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_CLIENT_ID });
 
 export const useApi = () => {
   const [results, setResults] = useState("");
@@ -10,21 +7,21 @@ export const useApi = () => {
   const fetchData = async (prompt: string) => {
     setLoading(true);
     try {
-      const response = await ai.models.generateContentStream({
-        model: "gemini-2.0-flash",
-        contents: prompt,
+      const res = await fetch("/.netlify/functions/gemini", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
       });
 
-      let result = "";
-      for await (const chunk of response) {
-        if (typeof chunk.text === "string") {
-          result += chunk.text;
-        }
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Error al generar contenido");
       }
 
-      setResults(result);
+      setResults(data.text);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     } finally {
       setLoading(false);
     }
