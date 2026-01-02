@@ -33,7 +33,7 @@ export default async (req) => {
     const ai = new GoogleGenAI({ apiKey });
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "gemini-2.0-flash-lite",
       contents: `Dado el color ${color}, devuélveme exactamente este JSON sin explicaciones ni comentarios:
 
 {
